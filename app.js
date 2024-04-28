@@ -7,8 +7,8 @@ const submitBtn = document.getElementById('submit')
 
 const plusBtn = document.getElementById('plus')
 const minusBtn = document.getElementById('minus')
-const multiplyBtn = document.getElementById('multiply')
-const divideBtn = document.getElementById('divide')
+const multiplyBtn = document.getElementById('multiplication')
+const divideBtn = document.getElementById('division')
 
 let action = '' // сюда будет попадать один из математических элементов
 
@@ -54,12 +54,12 @@ minusBtn.onclick = function () {
   
 multiplyBtn.onclick = function () {
     action = '*'
-    console.log('multiply')
+    console.log('multiplication')
 }
 
 divideBtn.onclick = function () {
     action = '/'
-    console.log('divide')
+    console.log('division')
 }
 
 
