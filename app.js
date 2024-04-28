@@ -1,4 +1,4 @@
-const resultElement = document.getElementById('result')
+const resultElement = document.getElementById('result') // беру эелементы из html по айдишнику
 
 const input1 = document.getElementById('input1')
 const input2 = document.getElementById('input2')
@@ -7,10 +7,12 @@ const submitBtn = document.getElementById('submit')
 
 const plusBtn = document.getElementById('plus')
 const minusBtn = document.getElementById('minus')
+const multiplyBtn = document.getElementById('multiply')
+const divideBtn = document.getElementById('divide')
 
-let action = '+'
+let action = '' // сюда будет попадать один из математических элементов
 
-
+// если цифра меньше 0 то будет др цвет
 function printResult(result) {
     if (result < 0) {
         resultElement.style.color = 'red'
@@ -20,34 +22,26 @@ function printResult(result) {
     resultElement.textContent = result
 } 
 
-function computeNumbersWithAction(inp1, inp2, actionSymbol) {
-    const num1 = Number(inp1.value)
-    const num2 = Number(inp2.value)
-
-    // if (actionSymbol == '+') {
-    //     return num1 + num2
-    // }
-
-    // if (actionSymbol == '-') {
-    //     return num1 - num2
-    // }
-    return actionSymbol == '+' ? num1 + num2 : num1 - num2
-}
-
+// основная функция которая производит вычисление
 submitBtn.onclick = function () {
-    const result = computeNumbersWithAction(input1, input2, action)
-    printResult(result)
 
-    // if (action == '+') {
-    //     const sum = Number(input1.value) + Number(input2.value)
-    //     printResult(sum)
-    // } else if (action == '-') {
-    //     const sum = Number(input1.value) - Number(input2.value)
-    //     printResult(sum)
-    // }
+    if (action == '+') {
+        const sum = Number(input1.value) + Number(input2.value)
+        printResult(sum)
+    } else if (action == '-') {
+        const sum = Number(input1.value) - Number(input2.value)
+        printResult(sum)
+    } else if (action == '*') {
+        const sum = Number(input1.value) * Number(input2.value)
+        printResult(sum)
+    } else if (action == '/') {
+        const sum = Number(input1.value) / Number(input2.value)
+        printResult(sum)
+    }
     
 }
 
+// события через которую в action попадает 1 из математических элементов
 plusBtn.onclick = function () {
     action = '+'
     console.log('plus')
@@ -56,6 +50,16 @@ plusBtn.onclick = function () {
 minusBtn.onclick = function () {
     action = '-'
     console.log('minus')
+}
+  
+multiplyBtn.onclick = function () {
+    action = '*'
+    console.log('multiply')
+}
+
+divideBtn.onclick = function () {
+    action = '/'
+    console.log('divide')
 }
 
 
