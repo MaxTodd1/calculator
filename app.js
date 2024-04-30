@@ -1,4 +1,4 @@
-const resultElement = document.getElementById('result') // беру эелементы из html по айдишнику
+const resultElement = document.getElementById('result') // беру элементы из html по айдишнику
 
 const input1 = document.getElementById('input1')
 const input2 = document.getElementById('input2')
@@ -28,15 +28,23 @@ submitBtn.onclick = function () {
     if (action == '+') {
         const sum = Number(input1.value) + Number(input2.value)
         printResult(sum)
+        input1.value = ''
+        input2.value = ''
     } else if (action == '-') {
         const sum = Number(input1.value) - Number(input2.value)
         printResult(sum)
+        input1.value = ''
+        input2.value = ''
     } else if (action == '*') {
         const sum = Number(input1.value) * Number(input2.value)
         printResult(sum)
+        input1.value = ''
+        input2.value = ''
     } else if (action == '/') {
         const sum = Number(input1.value) / Number(input2.value)
         printResult(sum)
+        input1.value = ''
+        input2.value = ''
     }
     
 }
@@ -61,5 +69,3 @@ divideBtn.onclick = function () {
     action = '/'
     console.log('division')
 }
-
-
