@@ -10,6 +10,8 @@ const minusBtn = document.getElementById('minus')
 const multiplyBtn = document.getElementById('multiplication')
 const divideBtn = document.getElementById('division')
 
+const selected = document.getElementById('selected')
+
 let action = '' // сюда будет попадать один из математических элементов
 
 // если цифра меньше 0 то будет др цвет
@@ -52,20 +54,24 @@ submitBtn.onclick = function () {
 // события через которую в action попадает 1 из математических элементов
 plusBtn.onclick = function () {
     action = '+'
+    selected.innerHTML = '+'
     console.log('plus')
 }
 
 minusBtn.onclick = function () {
     action = '-'
+    selected.innerHTML = '-'
     console.log('minus')
 }
   
 multiplyBtn.onclick = function () {
     action = '*'
+    selected.innerHTML = '*'
     console.log('multiplication')
 }
 
 divideBtn.onclick = function () {
     action = '/'
+    selected.innerHTML = '/'
     console.log('division')
 }
