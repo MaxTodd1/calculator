@@ -14,7 +14,7 @@ const selected = document.getElementById('selected')
 
 let action = '' // сюда будет попадать один из математических элементов
 
-// если цифра меньше 0 то будет др цвет
+// функция вывода результата
 function printResult(result) {
     if (result < 0) {
         resultElement.style.color = 'red'
@@ -51,7 +51,7 @@ submitBtn.onclick = function () {
     
 }
 
-// события через которую в action попадает 1 из математических элементов
+// события через которые в action попадает 1 из математических элементов
 plusBtn.onclick = function () {
     action = '+'
     selected.innerHTML = '+'
